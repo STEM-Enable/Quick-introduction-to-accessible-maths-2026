@@ -1,0 +1,44 @@
+/* Left-align the entire title slide */
+.reveal .slides > section:first-of-type,
+.reveal .slides > section:first-of-type * {
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+
+/* Reduce ONLY the title font size */
+.reveal .slides > section:first-of-type h1 {
+  font-size: 2.2em !important;
+  margin-bottom: 0.3em !important;
+}
+
+/* Explicitly left-align Quarto's author blocks */
+.reveal .slides > section:first-of-type .quarto-title-authors,
+.reveal .slides > section:first-of-type .quarto-title-author,
+.reveal .slides > section:first-of-type .quarto-title-affiliation,
+.reveal .slides > section:first-of-type .author,
+.reveal .slides > section:first-of-type .affiliation {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  margin-left: 0 !important;
+}
+
+/* Optional: slightly smaller author text */
+.reveal .slides > section:first-of-type .quarto-title-author,
+.reveal .slides > section:first-of-type .quarto-title-affiliation {
+  font-size: 0.9em !important;
+}
+
+/* Change ALL h1 headings in the presentation */
+.reveal h1 {
+  font-size: 2.2em !important;   /* adjust to taste */
+}
+
+
+
+.reveal .quarto-layout-panel img {
+  max-height: 275px;
+  object-fit: contain;
+}
+
+
