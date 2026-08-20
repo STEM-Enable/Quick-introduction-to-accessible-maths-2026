@@ -9,6 +9,7 @@ author:
 format: 
   revealjs:
     theme: default
+    reference-location: document
     logo: MASH University of Bath.png
     html-math-method: 
       method: mathjax
@@ -36,51 +37,52 @@ editor: visual
 # Plan
 
 -   Why worry about maths access?
--   What are the problems?
+-   What is the maths specific problem?
 -   What do solutions look like?
 -   How do you get started?
 
-Live document: EHC ADD THIS HERE
+Live document: <https://stem-enable.github.io/Quick-introduction-to-accessible-maths-2026/>
 
-# Why worry about maths access?
+# Why worry about maths[^1] access?
+
+::: {.content-visible when-format="revealjs"}
+<br><br>
+:::
+
+[^1]: I will use the word maths as a shorthand for all mathematical and statistical content used across any STEM degree. Although I won't be talking about specialist chemical notations and diagrams the same issues apply. 
 
 ## The legal
 
-EHC DOUBLE CHECK
-
-Accessibility is a legal requirement... I am not a lawyer. Seek advice.
+Accessibility is a legal requirement... I am not a lawyer[^2]. Seek advice.
 
 -   Equal access:
     -   England, Scotland, Wales: [Equality Act 2010](https://www.legislation.gov.uk/ukpga/2010/15/contents)
-    -   Northern Ireland, as amended: [Disability Discrimination Act 1995](http://www.niassembly.gov.uk/globalassets/Documents/RaISe/Publications/2012/ofmdfm/2712.pdf)
-    -   Ireland: [Equal Status Acts 2000 - 2018](https://www.ihrec.ie/guides-and-tools/human-rights-and-equality-in-the-provision-of-good-and-services/what-does-the-law-say/equal-status-acts/)
--   Accessible web content (considered to cover University VLE content):
-    -   UK: [Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/852/contents/made)
+    -   Northern Ireland: [Disability Discrimination Act 1995, (as amended), including SENDO 2005](http://www.niassembly.gov.uk/globalassets/Documents/RaISe/Publications/2012/ofmdfm/2712.pdf)
+    -   Ireland: [Equal Status Acts 2000 - 2018](https://www.ihrec.ie/app/uploads/2022/08/IHREC-Equal-Status-Rights-Leaflet-WEB.pdf)
+-   Accessible digital content (including university websites, web services and most VLE content):
+    -   UK: [Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/952/contents)
     -   Ireland: [European Union (Accessibility of Websites and Mobile Applications of Public Sector Bodies) Regulations 2020](https://www.irishstatutebook.ie/eli/2020/si/358/made/en/print)
+
+[^2]: Legislation is cited for awareness only and this does not constitute legal advice. Specific legal questions should be referred to your University legal team.
 
 ## But we should care anyway...
 
-EHC: SHORTEN AND SAY
+**We want** students to spend their effort engaging with concepts, not overcoming barriers in our resources.
 
-**We want** students to have the processing capacity to engage with concepts, mathematical arguments and abstract thinking!
+Students with print disabilities or difficulties with reading, note-taking, memory or concentration may expend significant effort accessing information before learning can begin.
 
-Students with a print disability, with difficulties with taking notes, memory and concentration may spend substantial processing capacity on entirely different tasks.
+**As educators, we should make information accessible in multiple ways.**
 
-# What are the problems?
+-   Rich, interactive resources can benefit all students.
+-   Poorly designed resources create practical and technical barriers:
+    -   Notation inaccessible via speech, magnification, Braille or small screens
+    -   Difficult keyboard-only navigation
+    -   Meaning conveyed by colour alone
+    -   Poorly scalable graphics
 
-EHC: SHORTEN AND SAY
+# What is the maths specific problem?
 
-Generally speaking we need to make it possible to access and consume information in a variety of ways.
-
--   All students, but especially those with e.g. Dyslexia, benefit from colourful, interactive, responsive resources with well rendered maths and graphics, enriched with video and audio. Go for it!
--   But poorly made resources create practical and technical barriers:
-    -   Complex navigation/accurate input hard using keyboard/pointer only
-    -   Maths needs to be chunkable and navigable for speech, magnification, Braille and small screens
-    -   Use of colour-only to give meaning is a problem
-    -   Raster graphics do not magnify/zoom well
-    -   Responsive pages with multiple foci hard for VI users
-
-## Maths in PDF is inaccessible
+## Structured text can be unexpectedly inaccessible
 
 ::: {style="display: flex; justify-content: center;"}
 <iframe width="840" height="473" title="Maths in a PDF being read aloud" src="https://www.youtube-nocookie.com/embed/mgpo23i76O0?start=42&amp;rel=0&amp;end=63" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -92,68 +94,53 @@ Generally speaking we need to make it possible to access and consume information
 
 ## Could we solve it by...?
 
-You might ask, can we not solve this by ensuring that the PDF is accessible? Unfortunately, the answer is no. The act of creating the PDF destroys information about the structure of the mathematical expression.
+Can we not solve this by ensuring that the PDF is accessible? Unfortunately, the answer is no. The act of creating the PDF destroys the structure of mathematical, and similar, expressions. Reflow on a small screen produces...
 
 ![](./Figs/reflowing.png){width="40%" fig-align="center" fig-alt="Jumbled mess of elements of the quadratic equation with the fraction structure and square root structure completely destroyed."}
 
 # What do solutions look like?
 
-Being able to change how text is presented or using assistive technology effectively for maths requires:
+## Structure + software
 
--   Authors to produce accessible mathematical materials
--   Readers to have software and assistive technology which can manipulate the specific format of mathematical text
+Being able to adapt how text is presented, whether for small screens or via assistive software requires:
 
-EHC: SHORTEN THE PARTS WHICH COME NEXT
+-   Authors to produce accessible materials which maintains the encoding of the structured text
+-   Readers to have software and assistive technology which can manipulate the specific format
 
-## Structure
-
-Software relies on the structure in the maths being well-encoded in the format:
-
--   PDF, print, handwriting and E-books using images of maths cannot be processed. They are inaccessible and inflexible on, for instance, small screen devices. They are lossy formats for maths!
--   Word, HTML based formats and EPub3 have structural integrity for maths and are accessible to many assistive technologies
--   But not all AT can access maths all formats! PowerPoint 365 is theoretically accessible but most AT won't work with it
--   And most mathematicians use specialist scientific document preparation systems such as LaTeX, which, historically, have not output these formats
-    -   Work is ongoing to create a version of LaTeX, extra encoding within the PDF and software which works with the extra encoding. This can't be used to meet student needs yet.
-
-## Could we convert the LaTeX?
-
--   It depends on the LaTeX...
--   It is **not possible** to convert LaTeX to html in the general case
--   It is easy to 'fall out' of the convertible subset without realising or knowing why, the addition of a package, change of preamble order, use of a seemingly innocent command...
-
-## Could we convert the mathematicians?!
-
-Any new document preparation system needs to ***enable*** the writer by providing the key features of mathematical/scientific document preparation. And these features make things complex.
-
--   Software is catching up and in flux.
--   Nothing is easy to learn.
-
-Increasingly mathematicians are exploring and converting, but they need appropriate institutional infrastructure, support, workload time allocation and training. Without this the task remains unreasonable.
-
-## What do we convert ***to***?
-
-EHC: THIS IS THE BIT TO KEEP
-
-Only three formats of mathematical text are accessible:
+Only four formats of mathematical text are technically accessible:
 
 -   HTML using MathJax to render the mathematics
 -   Word/PowerPoint using the inbuilt equation editor
+-   Word/PowerPoint using MathType
 -   EPub3 using MathML
 
-Whatever **other** formats you supply you **must** supply at least one or, ideally, all of these to meet the public bodies requirement.
+You **must** supply at least one to meet the public bodies requirement.
 
--   Supply your course content 'spine' in this format.
+-   Supply your full course content 'spine' in this format.
 
-## Is that enough?
 
-EHC: SHORTEN AND ADD TO SLIDE ABOVE
+## So, job done?
 
-No. The equal access acts mean we need to meet individual needs so you may need to produce any of the other formats. This makes PowerPoint a problem as it cannot be converted.
+EHC: SORT OUT FOOTNOTES FOR BEAMER
 
-**And** you also need to supply PDF!
+No. Not all reader assistive technology can access maths all formats! 
+
+-   Equal access acts mean we must meet individual needs - so may need to produce other formats. 
+-   Some cannot not be transformed easily to others
+
+For authors using Word/PowerPoint, standard accessiblity guidance is not enough. 
+
+For authors using the LaTeX scientific document preparation system none of the above formats are native outputs[^4]. **And** if a student can't make their own clear print **and print it** you also may need to supply variants on inaccessible PDF!
 
 -   Not all accessibility is about technical access
--   Clear print PDF is selected most often by disabled students in the Department of Mathematical Sciences.
+-   Clear print[^3] PDF is selected most often by disabled students in the Department of Mathematical Sciences at the University of Bath[^5].
+
+
+[^3]: Adhering as closely as possible to RNIB clear print guidelines
+
+[^4]: Work is ongoing to create a version of LaTeX, extra encoding within an adapted PDF **and** software which works with the extra encoding. In the meantime we need to either convert the LaTeX to other formats or switch to a different scientific document preparation system. It is **not possible** to convert LaTeX to html in the general case. It is easy to 'fall out' of the convertible subset without realising or knowing why, the addition of a package, change of preamble order, use of a seemingly innocent command...
+
+[^5]: Last year we had to assist an author to create a printable PDF for a disabled student after the author had made a whole (and completely technically accessible) course using ProTeXt - but couldn't get PDF working and the HTML produced poor print output...
 
 # How do you get started?
 
@@ -170,7 +157,7 @@ EHC: CHECK LINKS, CONSIDER WHETHER NEEDS UPDATING
 
 More information and tools within [accessible mathematical Word document workshop resources](https://stem-enable.github.io/WordWorkshop/) and [effective (keyboard-only) input of maths in Word](https://bathmash.github.io/gettingstarted/Word/index.html).
 
-## Sounds solved to me?
+## Word/PowerPoint with MathType
 
 EHC: CAN THIS BE A NOTE ON THE ABOVE?
 
@@ -179,16 +166,12 @@ Some students will require MathType format
 -   Because their AT vendor has not implemented the interface to Word but the AT does work with MathType. Test everything and contact the vendors!
 -   Materials should be prepared as above and then a ***copy*** converted to MathType as automatic conversion of all expressions cannot be reversed.
 
-Also... this generally won't work for the mathematicians and some scientists.
 
--   Word is not a scientific document preparation system.
--   For those who use LaTeX we need a different plan.
-
-## Web: WCAG 2.1 AA + MathJax!
+## HTML (WCAG 2.2 AA) + MathJax!
 
 EHC: THIS NEEDS UPDATING AS EXPERIENCE YOURSELF RELIES ON CHROMEVOX
 
--   Check it meets the legal requirement of WCAG 2.1 Level AA with e.g. [Accessibility Insights for Web plugin for Chrome](https://accessibilityinsights.io/docs/en/web/overview)
+-   Check it meets the legal requirement of WCAG 2.2 Level AA with e.g. [Accessibility Insights for Web plugin for Chrome](https://accessibilityinsights.io/docs/en/web/overview)
 
 -   Check it is MathJax... Right click! $$x = \frac{-b\pm\sqrt{b^2 - 4ac}}{2a}$$
 
@@ -199,15 +182,8 @@ EHC: THIS NEEDS UPDATING AS EXPERIENCE YOURSELF RELIES ON CHROMEVOX
 
 -   [Experience this yourself](https://people.bath.ac.uk/cspehj/coventry/arclengthInR.html)
 
-## Supporting mathematicians
 
-EHC: SHORTEN, SAY
-
--   Web + MathJax is the most accessible end format for a mathematical or scientific document but we need a way to prepare the document.
--   We are not perscriptive, we'll support anything which works.
--   Two main approaches have attracted most of the mathematicians at Bath but there are some other rarer contenders!
-
-## Try converting the LaTeX
+## Getting there from scientific document preparation systems
 
 EHC: PRESENT OPTIONS WITH LINKS ON ONE SLIDE, UPDATE LINKS
 
@@ -251,7 +227,7 @@ And you can have theorem types share numbering
 
 ```
 
-## Maths e-assessment
+## Non-text elements
 
 EHC: DO FIGURES FIRST AND CONSIDER THAT AND ALL BELOW ARE EXTRAS TO LOOK AT AFTER THE TEXT
 
