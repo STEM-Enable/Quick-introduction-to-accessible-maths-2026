@@ -126,7 +126,7 @@ You **must** supply at least one to meet the public bodies requirement.
 
 Afraid not... 
 
-Not all reader assistive technology can access maths all formats! 
+Not all reader assistive technology can access maths in all formats! 
 
 -   Equal access acts mean we must meet individual needs - so may need to produce other formats. 
 -   Some cannot not be transformed easily to others
@@ -143,7 +143,7 @@ For authors using the LaTeX scientific document preparation system none of the a
 ## Word/PowerPoint 365
 
 -   Use the inbuilt Accessibility Checker and information on e.g. [Making your Word documents accessible](https://support.office.com/en-gb/article/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d)
--   Write *all* mathematical text written using the MS 365 equation editor. E.g. if you are writing about the variable (x) or (\theta) it should be written as an equation. If you are writing (x\^2) it should be written as an equation.
+-   Write *all* mathematical text written using the MS 365 equation editor. E.g. if you are writing about the variable ($x$) or ($\theta$) it should be written as an equation. If you are writing ($x^2$) it should be written as an equation.
     -   Never use insert symbol.
     -   Never write superscripts, subscripts, fractions etc. using font or style changes and standard keyboard input alone
     -   Never use an image of an equation.
@@ -179,7 +179,7 @@ We recommend using MathJax 2.7.9 or MathJax 4.* as MathJax 3.x does not enable r
 
 ## Scientific document preparation systems
 
--   Attempt to transform the LaTeX to HTML with MathJax using [Chirun](https://chirun.org.uk/) or [lwarp](https://ctan.org/pkg/lwarp?lang=en)
+-   Attempt to transform the LaTeX to HTML with MathJax using [Chirun](https://chirun.org.uk/), [BookML](https://vlmantova.github.io/bookml/) or [lwarp](https://ctan.org/pkg/lwarp?lang=en)
     -   What happens depends on what you are doing in LaTeX
     -   Keep your preamble **clean**, start with a minimal document, add in sections recompiling to all required output formats after each addition
     -   Some documents cannot be converted
@@ -188,7 +188,7 @@ We recommend using MathJax 2.7.9 or MathJax 4.* as MathJax 3.x does not enable r
     - [Quarto](https://quarto.org/) is recommended in most cases
       - [Bookdown](https://bookdown.org/) continues to be fine but start new projects in Quarto
     - [RMarkdown](https://rmarkdown.rstudio.com/) can be a helpful starting point for those completely new
-    - [Clavertondown](https://bathmash.github.io/clavertondown/), built on top of RMarkdown and Bookdown; should only be used if the other formats can't meet needs
+    - [Clavertondown](https://bathmash.github.io/clavertondown/), built using RMarkdown and Bookdown; only if other methods can't meet needs
   
 ## Non-text elements
 
