@@ -22,6 +22,10 @@ format:
     theme: default
     logo: MASH University of Bath - tiny.png
     slide-level: 2
+  pptx: 
+    slide-level: 2
+  docx: 
+    toc: true
   html: 
     output-file: index.html
     html-math-method: 
@@ -135,30 +139,25 @@ For authors using the LaTeX scientific document preparation system none of the a
 
 ## Word/PowerPoint 365
 
-EHC: CHECK LINKS, CONSIDER WHETHER NEEDS UPDATING
-
 -   Use the inbuilt Accessibility Checker and information on e.g. [Making your Word documents accessible](https://support.office.com/en-gb/article/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d)
 -   Write *all* mathematical text written using the MS 365 equation editor. E.g. if you are writing about the variable (x) or (\theta) it should be written as an equation. If you are writing (x\^2) it should be written as an equation.
     -   Never use insert symbol.
     -   Never write superscripts, subscripts, fractions etc. using font or style changes and standard keyboard input alone
     -   Never use an image of an equation.
 -   Use Review -\> Read Aloud (Alt + Ctrl + Space) to check the maths
+  - [Quick example](./example.docx)
 
-More information and tools within [accessible mathematical Word document workshop resources](https://stem-enable.github.io/WordWorkshop/) and [effective (keyboard-only) input of maths in Word](https://bathmash.github.io/gettingstarted/Word/index.html).
+## Word/PowerPoint transforms and tools
 
-## Word/PowerPoint with MathType
+EHC: CAN CAR CONVERT MATHTYPE BACK TO NORMAL WORD?
 
-EHC: CAN THIS BE A NOTE ON THE ABOVE?
+- [Effective (keyboard-only) input of maths in Word](https://bathmash.github.io/gettingstarted/Word/index.html).
+- [Transform Word to other formats](https://www.cwu.edu/student-life/student-support/central-access/resources/reader.php)
+- [Transform to MathType](https://www.wiris.com/en/mathtype/office-tools/)
 
-Some students will require MathType format
-
--   Because their AT vendor has not implemented the interface to Word but the AT does work with MathType. Test everything and contact the vendors!
--   Materials should be prepared as above and then a ***copy*** converted to MathType as automatic conversion of all expressions cannot be reversed.
-
+At the time of writing transforming from (any) PowerPoint is trickier. Best not to use this as a source format.
 
 ## HTML (WCAG 2.2 AA) + MathJax!
-
-EHC: THIS NEEDS UPDATING AS EXPERIENCE YOURSELF RELIES ON CHROMEVOX
 
 -   Check it meets the legal requirement of WCAG 2.2 Level AA with e.g. [Accessibility Insights for Web plugin for Chrome](https://accessibilityinsights.io/docs/en/web/overview)
 
@@ -169,102 +168,49 @@ EHC: THIS NEEDS UPDATING AS EXPERIENCE YOURSELF RELIES ON CHROMEVOX
     -   Fallback for ARIA-aware AT without native support
     -   AT providers without native support and not ARIA aware are a problem but not your problem.
 
--   [Experience this yourself](https://people.bath.ac.uk/cspehj/coventry/arclengthInR.html)
+We recommend using MathJax 2.7.9 or MathJax 4.* as MathJax 3.x does not enable reflow on zoom. 
 
+## Scientific document preparation systems
 
-## Getting there from scientific document preparation systems
-
-EHC: PRESENT OPTIONS WITH LINKS ON ONE SLIDE, UPDATE LINKS
-
--   Experts: [tools which may work for a large subset but cannot tell you anything about why something doesn't work](https://hub.docker.com/r/bathmash/mathaltnotes)
--   Non-experts at Bath who want to stick with LaTeX have found that [lwarp](https://ctan.org/pkg/lwarp?lang=en) works for them if they are careful.
-    -   Beware of some hard work (documentation currently 1237 pages)
+-   Attempt to transform the LaTeX to HTML with MathJax using [Chirun](https://chirun.org.uk/) or [lwarp](https://ctan.org/pkg/lwarp?lang=en)
     -   What happens depends on what you are doing in LaTeX
-    -   You have to work that out and test for accessibility for yourself.
-    -   [Quick lwarp demo](https://github.com/STEM-Enable/Getting-started-with-accessible-maths-March-2023/raw/main/example/LwarpExample.zip) ([link for Emma during the talk](https://posit.cloud/content/5657619))
-
-## RMarkdown formats
-
-RMarkdown is a language designed for transform to html
-
--   LaTeX for equations
--   Simple markup language for the rest of the document.
--   Authors are confined to a transformable subset with a quick compile loop and a supportive GUI.
--   The output has known accessibility features.
--   The typesetting is still extensible, just more reasonably so.
--   More information on getting started with RMarkdown see [Using R as a basis for writing an accessible mathematical document](https://stem-enable.github.io/RMarkdownWorkshop/)
--   [Quick RMarkdown demo](https://github.com/STEM-Enable/RMarkdownWorkshop/raw/master/examples/arclengthInR.zip) ([link for Emma during the talk](https://posit.cloud/content/4447915))
-
-## Quarto/Bookdown/Clavertondown
-
-EHC ADD QUARTO
-
-Eventually, you will probably want [Bookdown](https://bookdown.org/):
-
-```{theorem, label="thm1"}
-Bookdown is needed for things like theorems and internal references
-```
-
-We built [Clavertondown](https://bathmash.github.io/clavertondown/) for additional functionality important in pure mathematics and for lecturers generally.
-
-```{newtheorem, env='Thought', label="tho1"}
-You can create new theorem types without affecting the Bookdown types such as theorem \@ref(thm:thm1).
-```
-
-```{newtheorem, env='Nugget', label="nug1"}
-And you can have theorem types share numbering
-
-```
-
+    -   Keep your preamble **clean**, start with a minimal document, add in sections recompiling to all required output formats after each addition
+    -   Some documents cannot be converted
+    -   **No known Beamer solution** at time of writing
+-   Work in a Markdown format, using LaTeX for equations, with HTML has the primary output (can also output LaTeX/PDF); can create slides and single-source slides and documents (like Beamer)
+    - [Quarto](https://quarto.org/) is recommended in most cases
+      - [Bookdown](https://bookdown.org/) continues to be fine but start new projects in Quarto
+    - [RMarkdown](https://rmarkdown.rstudio.com/) can be a helpful starting point for those completely new
+    - [Clavertondown](https://bathmash.github.io/clavertondown/), built on top of RMarkdown and Bookdown; should only be used if the other formats can't meet needs
+  
 ## Non-text elements
 
-EHC: DO FIGURES FIRST AND CONSIDER THAT AND ALL BELOW ARE EXTRAS TO LOOK AT AFTER THE TEXT
+- Graphical elements
+  -   [Desmos was designed to work and tested with screenreaders and written to conform to WCAG 2.1](https://www.desmos.com/accessibility)
+  -   [Geogebra aims to meet WCAG 2.1 AA](https://www.geogebra.org/m/r2EF8uRx)
+    -   [Project **Beyond alt text** between Bath and Coventry produced guidelines](https://bathmash.github.io/CETL-MSOR-2022-Beyond-alt-text/index.html)
+  -   [BrailleR](https://github.com/ajrgodfrey/BrailleR) is a project by and for [blind statisticians who use R](https://r-resources.massey.ac.nz/BrailleR/)
+  -   [DIAGRAM Center](http://diagramcenter.org/) has some great resources for those new to diagram description:
+      -   Poet Image Description Training Tool
+      -   Image description guidelines
+      -   Sample book
+      -   [Webinar on complex images](http://diagramcenter.org/diagramwebinars.html#compleximages)
+- Maths e-assessment
+  -   [Numbas aims to meet WCAG 2.1 AA](https://docs.numbas.org.uk/en/latest/accessibility/editor.html)
+  -   [Stack aims to meet WCAG 2.1 AA](https://stack-assessment.org/Legal/Accessibility/)
 
--   [Numbas aims to meet WCAG 2.1 AA](https://docs.numbas.org.uk/en/latest/accessibility/editor.html)
--   [Stack aims to meet WCAG 2.1 AA](https://stack-assessment.org/Legal/Accessibility/)
--   There are probably others but these are the only ones I have used
+# Next steps
 
-## Simple graphs: Desmos
+The ideal can feel a long way off... 
 
--   [Desmos was designed to work and tested with screenreaders and written to conform to WCAG 2.1](https://www.desmos.com/accessibility)
--   [Experience this yourself](https://people.bath.ac.uk/cspehj/coventry/arclengthInR.html)
+- Pick a place to start which feels achievable and start! 
+- The journey is less lonely if we share experiences and learn from each other
+    - Consider setting up an institution community of practice, after 6 years our Markdown/Bookdown/ClavertonDown/Quarto CoP answers many questions between themselves without help from me, my team or the specialist STEM learning technologists (who we are very lucky to have)
+    - In the UK there is the [JISC Accessibility Community Maths Working Group](https://sites.google.com/view/accessible-maths/home). 
+      - Is there anything similar in Ireland?
+      - It may be worth exploring whether links can be made with them from Ireland
 
-<iframe title="DESMOS example graph" src="https://www.desmos.com/calculator/rtvcqeg9ol?embed" width="700px" height="300px" style="border: 1px solid #ccc" frameborder="0">
-
-![[Interactive plot of sine](https://www.desmos.com/calculator/rtvcqeg9ol)\label{sine}](./Figs/desmos-sine-graph.png){width="60%" longdesc="https://www.desmos.com/calculator/rtvcqeg9ol"}
-
-</iframe>
-
-## Geogebra: but be careful!
-
--   [Geogebra aims to meet WCAG 2.1 AA](https://www.geogebra.org/m/r2EF8uRx)
--   But, just because you can make a usable accessible object with a piece of software doesn't mean every object you make is!
--   [Project **Beyond alt text** between Bath and Coventry produced guidelines](https://bathmash.github.io/CETL-MSOR-2022-Beyond-alt-text/index.html)
--   It is possible and useful but you need to take time and care.
-
-## BrailleR: for the statisticians
-
-EHC: DIRECT TO INSTRUCTIONS?
-
--   [BrailleR](https://github.com/ajrgodfrey/BrailleR) is a project by and for [blind statisticians who use R](https://r-resources.massey.ac.nz/BrailleR/)
-
-## Other diagrams
-
-EHC UPDATE
-
--   [DIAGRAM Center](http://diagramcenter.org/) has some great resources for those new to diagram description:
-    -   Poet Image Description Training Tool
-    -   Image description guidelines
-    -   Sample book
-    -   [Webinar on complex images](http://diagramcenter.org/diagramwebinars.html#compleximages)
--   [UKAAF has guidance on accessible images](https://www.ukaaf.org/standards/#accessible-images)
--   [NCAM (Old site) has guidelines and examples](http://ncamftp.wgbh.org/ncam-old-site/experience_learn/educational_media/stemdx.html)
-
-# Thanks!
-
-Emma Cliffe, [E.H.Cliffe\@bath.ac.uk](mailto:E.H.Cliffe@bath.ac.uk){.email}
-
-In the UK there is the [JISC Accessibility Community Maths Working Group](https://sites.google.com/view/accessible-maths/home). It may be worth exploring whether links can be made with them from Ireland.
+Want to see how I built this single-source, multiple-outputs document? [Github repository](https://github.com/STEM-Enable/Quick-introduction-to-accessible-maths-2026/)
 
 [^1]: I will use the word maths as a shorthand for all mathematical and statistical content used across any STEM degree. Although I won't be talking about specialist chemical notations and diagrams the same issues apply. 
 
