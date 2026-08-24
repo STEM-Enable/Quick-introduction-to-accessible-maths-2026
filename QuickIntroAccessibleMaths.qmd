@@ -18,20 +18,26 @@ format:
     width: 1200
     margin: 0.05
     smaller: true
+    notes: false
   beamer:
     theme: default
     logo: MASH University of Bath - tiny.png
     slide-level: 2
+    notes: false
   pptx: 
     slide-level: 2
+    reference-doc: template.pptx
+    notes: false
   docx: 
     toc: true
+    notes: true
   html: 
     output-file: index.html
     html-math-method: 
       method: mathjax
       url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML"
     toc: true
+    notes: true
     include-after-body: 
       text: | 
         <footer class="footer"><img src="MASH University of Bath.png" alt="Mathematics Resources Centre, MASH, providing Maths and Statistics Help, at the University of Bath" height="90" align="right"></footer>
@@ -49,9 +55,6 @@ Live document: <https://stem-enable.github.io/Quick-introduction-to-accessible-m
 
 # Why worry about maths[^1] access?
 
-::: {.content-visible when-format="revealjs"}
-<br><br>
-:::
 
 ## The legal
 
@@ -149,13 +152,17 @@ For authors using the LaTeX scientific document preparation system none of the a
 
 ## Word/PowerPoint transforms and tools
 
-EHC: CAN CAR CONVERT MATHTYPE BACK TO NORMAL WORD?
 
 - [Effective (keyboard-only) input of maths in Word](https://bathmash.github.io/gettingstarted/Word/index.html).
-- [Transform Word to other formats](https://www.cwu.edu/student-life/student-support/central-access/resources/reader.php)
+- [Central Access Reader](https://www.cwu.edu/student-life/student-support/central-access/resources/reader.php)
+  - Transforms to specially set up HTML for screenreaders
+  - Can output MP3
+  - Can be used as text to speech software (but is not screenreader compatible) 
 - [Transform to MathType](https://www.wiris.com/en/mathtype/office-tools/)
+  - Student can convert to MathType - supply standard format
+  - Conversion back to Word is not possible in bulk
 
-At the time of writing transforming from (any) PowerPoint is trickier. Best not to use this as a source format.
+At the time of writing transforming from (any) PowerPoint is tricky. Best not to use this as a source format. If making slides, I would use Quarto (this!).
 
 ## HTML (WCAG 2.2 AA) + MathJax!
 
@@ -210,7 +217,14 @@ The ideal can feel a long way off...
       - Is there anything similar in Ireland?
       - It may be worth exploring whether links can be made with them from Ireland
 
-Want to see how I built this single-source, multiple-outputs document? [Github repository](https://github.com/STEM-Enable/Quick-introduction-to-accessible-maths-2026/)
+Want to see how I built this single-source, multiple-outputs document? [Github repository source - see qmd file](https://github.com/STEM-Enable/Quick-introduction-to-accessible-maths-2026/)
+
+:::{.content-hidden unless-meta="notes"}
+Here is some text which is only included in the notes formats!
+
+- To prove it is possible to create slides and notes from one source
+- You will find this part only in the html document and the Word format, not in any of the slide formats
+:::
 
 [^1]: I will use the word maths as a shorthand for all mathematical and statistical content used across any STEM degree. Although I won't be talking about specialist chemical notations and diagrams the same issues apply. 
 
