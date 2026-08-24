@@ -21,7 +21,7 @@ format:
   beamer:
     theme: default
     logo: MASH University of Bath - tiny.png
-    slide-level: 3
+    slide-level: 2
   html: 
     output-file: index.html
     html-math-method: 
@@ -49,8 +49,6 @@ Live document: <https://stem-enable.github.io/Quick-introduction-to-accessible-m
 <br><br>
 :::
 
-[^1]: I will use the word maths as a shorthand for all mathematical and statistical content used across any STEM degree. Although I won't be talking about specialist chemical notations and diagrams the same issues apply. 
-
 ## The legal
 
 Accessibility is a legal requirement... I am not a lawyer[^2]. Seek advice.
@@ -62,8 +60,6 @@ Accessibility is a legal requirement... I am not a lawyer[^2]. Seek advice.
 -   Accessible digital content (including university websites, web services and most VLE content):
     -   UK: [Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/952/contents)
     -   Ireland: [European Union (Accessibility of Websites and Mobile Applications of Public Sector Bodies) Regulations 2020](https://www.irishstatutebook.ie/eli/2020/si/358/made/en/print)
-
-[^2]: Legislation is cited for awareness only and this does not constitute legal advice. Specific legal questions should be referred to your University legal team.
 
 ## But we should care anyway...
 
@@ -119,11 +115,11 @@ You **must** supply at least one to meet the public bodies requirement.
 -   Supply your full course content 'spine' in this format.
 
 
-## So, job done?
+## So, job done? {.allowframebreaks}
 
-EHC: SORT OUT FOOTNOTES FOR BEAMER
+Afraid not... 
 
-No. Not all reader assistive technology can access maths all formats! 
+Not all reader assistive technology can access maths all formats! 
 
 -   Equal access acts mean we must meet individual needs - so may need to produce other formats. 
 -   Some cannot not be transformed easily to others
@@ -135,14 +131,7 @@ For authors using the LaTeX scientific document preparation system none of the a
 -   Not all accessibility is about technical access
 -   Clear print[^3] PDF is selected most often by disabled students in the Department of Mathematical Sciences at the University of Bath[^5].
 
-
-[^3]: Adhering as closely as possible to RNIB clear print guidelines
-
-[^4]: Work is ongoing to create a version of LaTeX, extra encoding within an adapted PDF **and** software which works with the extra encoding. In the meantime we need to either convert the LaTeX to other formats or switch to a different scientific document preparation system. It is **not possible** to convert LaTeX to html in the general case. It is easy to 'fall out' of the convertible subset without realising or knowing why, the addition of a package, change of preamble order, use of a seemingly innocent command...
-
-[^5]: Last year we had to assist an author to create a printable PDF for a disabled student after the author had made a whole (and completely technically accessible) course using ProTeXt - but couldn't get PDF working and the HTML produced poor print output...
-
-# How do you get started?
+# How do you get started? 
 
 ## Word/PowerPoint 365
 
@@ -276,3 +265,13 @@ EHC UPDATE
 Emma Cliffe, [E.H.Cliffe\@bath.ac.uk](mailto:E.H.Cliffe@bath.ac.uk){.email}
 
 In the UK there is the [JISC Accessibility Community Maths Working Group](https://sites.google.com/view/accessible-maths/home). It may be worth exploring whether links can be made with them from Ireland.
+
+[^1]: I will use the word maths as a shorthand for all mathematical and statistical content used across any STEM degree. Although I won't be talking about specialist chemical notations and diagrams the same issues apply. 
+
+[^2]: Legislation is cited for awareness only and this does not constitute legal advice. Specific legal questions should be referred to your University legal team.
+
+[^3]: Adhering as closely as possible to RNIB clear print guidelines
+
+[^4]: Work is ongoing to create a version of LaTeX, extra encoding within an adapted PDF **and** software which works with the extra encoding. In the meantime we need to either convert the LaTeX to other formats or switch to a different scientific document preparation system. It is **not possible** to convert LaTeX to html in the general case. It is easy to 'fall out' of the convertible subset without realising or knowing why, the addition of a package, change of preamble order, use of a seemingly innocent command...
+
+[^5]: Last year we had to assist an author to create a printable PDF for a disabled student after the author had made a whole (and completely technically accessible) course using ProTeXt - but couldn't get PDF working and the HTML produced poor print output...
