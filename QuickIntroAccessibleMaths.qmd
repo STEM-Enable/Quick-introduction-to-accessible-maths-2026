@@ -238,10 +238,9 @@ We recommend using MathJax 2.7.9 or [MathJax 4.* as MathJax 3.* does not enable 
   -   [Geogebra aims to meet WCAG 2.1 AA](https://www.geogebra.org/m/r2EF8uRx)
     -   [Project **Beyond alt text** between Bath and Coventry produced guidelines](https://bathmash.github.io/CETL-MSOR-2022-Beyond-alt-text/index.html)
   -   [BrailleR](https://github.com/ajrgodfrey/BrailleR) is a project by and for [blind statisticians who use R](https://r-resources.massey.ac.nz/BrailleR/)
+  -   [Complex images - making sense for accessibility](https://www.learningapps.co.uk/moodle/xertetoolkits/play.php?template_id=3023#page1)
   -   [DIAGRAM Center](http://diagramcenter.org/) has some great resources for those new to diagram description:
-      -   Poet Image Description Training Tool
-      -   Image description guidelines
-      -   Sample book
+      -   Poet Image Description Training Tool, Image description guidelines and Sample book
       -   [Webinar on complex images](http://diagramcenter.org/diagramwebinars.html#compleximages)
 - Maths e-assessment
   -   [Numbas aims to meet WCAG 2.1 AA](https://docs.numbas.org.uk/en/latest/accessibility/editor.html)
