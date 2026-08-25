@@ -21,6 +21,7 @@ format:
     notes: false
     video: true
   beamer:
+    output-file: QuickIntroAccessibleMathsBeamer.pdf
     theme: default
     logo: MASH University of Bath - tiny.png
     slide-level: 2
@@ -30,6 +31,7 @@ format:
     linkcolor: blue
     urlcolor: blue
     citecolor: blue
+    keep-tex: true
   pptx: 
     slide-level: 2
     reference-doc: template.pptx
@@ -44,6 +46,7 @@ format:
     notes: true
     video: true
   pdf:
+    output-file: QuickIntroAccessibleMathsClear.pdf
     toc: true
     notes: true
     video: false
