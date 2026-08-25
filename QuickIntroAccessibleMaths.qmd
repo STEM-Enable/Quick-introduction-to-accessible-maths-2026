@@ -5,7 +5,7 @@ date: 25 08 2026
 date-format: long
 author: 
   - name: "Emma Cliffe"
-    affiliations: "Universtiy of Bath"
+    affiliations: "University of Bath"
 format: 
   revealjs:
     theme: default
@@ -19,18 +19,44 @@ format:
     margin: 0.05
     smaller: true
     notes: false
+    video: true
   beamer:
     theme: default
     logo: MASH University of Bath - tiny.png
     slide-level: 2
     notes: false
+    video: false
+    colorlinks: true
+    linkcolor: blue
+    urlcolor: blue
+    citecolor: blue
   pptx: 
     slide-level: 2
     reference-doc: template.pptx
     notes: false
+    video: false
   docx: 
     toc: true
     notes: true
+    video: false
+  epub: 
+    toc: true
+    notes: true
+    video: true
+  pdf:
+    toc: true
+    notes: true
+    video: false
+    papersize: a4-paper
+    fontsize: 12pt
+    mainfont: "Open sans"
+    sansfont: "Open sans"
+    linestretch: 1.25
+    keep-tex: true
+    colorlinks: true
+    linkcolor: blue
+    urlcolor: blue
+    citecolor: blue
   html: 
     output-file: index.html
     html-math-method: 
@@ -38,6 +64,7 @@ format:
       url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML"
     toc: true
     notes: true
+    video: true
     include-after-body: 
       text: | 
         <footer class="footer"><img src="MASH University of Bath.png" alt="Mathematics Resources Centre, MASH, providing Maths and Statistics Help, at the University of Bath" height="90" align="right"></footer>
@@ -88,18 +115,23 @@ Students with print disabilities or difficulties with reading, note-taking, memo
 ## Structured text can be unexpectedly inaccessible
 
 ::: {style="display: flex; justify-content: center;"}
-<iframe width="840" height="473" title="Maths in a PDF being read aloud" src="https://www.youtube-nocookie.com/embed/mgpo23i76O0?start=42&amp;rel=0&amp;end=63" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-
+::::{.content-hidden unless-meta="video"}
+{{< video https://www.youtube-nocookie.com/embed/mgpo23i76O0?start=42&amp;rel=0&amp;end=63
+    title="Video demonstration"
+    width="800"
+    height="450"
+>}}
+::::
+::::{.content-visible unless-meta="video"}
 ![[Video demonstration](https://www.youtube.com/watch?v=mgpo23i76O0)\label{video}](./Figs/Acrobat-thumbnail.png){width="60%" longdesc="https://www.youtube.com/watch?v=mgpo23i76O0"}
-
-</iframe>
+::::
 :::
 
 ## Could we solve it by...?
 
-Can we not solve this by ensuring that the PDF is accessible? Unfortunately, the answer is no. The act of creating the PDF destroys the structure of mathematical, and similar, expressions. Reflow on a small screen produces...
+Can we not solve this by ensuring that the PDF is accessible? Unfortunately, the answer is currently, not yet[^4]. In current software and typically in-use PDF standards, the act of creating the PDF destroys the structure of mathematical, and similar, expressions. Reflow on a small screen produces...
 
-![](./Figs/reflowing.png){width="40%" fig-align="center" fig-alt="Jumbled mess of elements of the quadratic equation with the fraction structure and square root structure completely destroyed."}
+![Quadratic equation destroyed by reflow](./Figs/reflowing.png){width="40%" fig-align="center" fig-alt="Jumbled mess of elements of the quadratic equation with the fraction structure and square root structure completely destroyed." }
 
 # What do solutions look like?
 
@@ -110,7 +142,7 @@ Being able to adapt how text is presented, whether for small screens or via assi
 -   Authors to produce accessible materials which maintains the encoding of the structured text
 -   Readers to have software and assistive technology which can manipulate the specific format
 
-Only four formats of mathematical text are technically accessible:
+Until all this work is finished for PDF, only four formats of mathematical text are technically accessible:
 
 -   HTML using MathJax to render the mathematics
 -   Word/PowerPoint using the inbuilt equation editor
@@ -129,11 +161,11 @@ Afraid not...
 Not all reader assistive technology can access maths in all formats! 
 
 -   Equal access acts mean we must meet individual needs - so may need to produce other formats. 
--   Some cannot not be transformed easily to others
+-   Some formats cannot not be transformed easily to others
 
 For authors using Word/PowerPoint, standard accessiblity guidance is not enough. 
 
-For authors using the LaTeX scientific document preparation system none of the above formats are native outputs[^4]. **And** if a student can't make their own clear print **and print it** you also may need to supply variants on inaccessible PDF!
+For authors using the LaTeX scientific document preparation system none of the above formats are native outputs. **And** if a student can't make their own clear print **and print it** you also may need to supply variants on inaccessible PDF!
 
 -   Not all accessibility is about technical access
 -   Clear print[^3] PDF is selected most often by disabled students in the Department of Mathematical Sciences at the University of Bath[^5].
@@ -143,7 +175,7 @@ For authors using the LaTeX scientific document preparation system none of the a
 ## Word/PowerPoint 365
 
 -   Use the inbuilt Accessibility Checker and information on e.g. [Making your Word documents accessible](https://support.office.com/en-gb/article/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d)
--   Write *all* mathematical text written using the MS 365 equation editor. E.g. if you are writing about the variable ($x$) or ($\theta$) it should be written as an equation. If you are writing ($x^2$) it should be written as an equation.
+-   Write ***all*** mathematical text written using the MS 365 equation editor. E.g. if you are writing about the variable ($x$) or ($\theta$) it should be written as an equation. If you are writing ($x^2$) it should be written as an equation.
     -   Never use insert symbol.
     -   Never write superscripts, subscripts, fractions etc. using font or style changes and standard keyboard input alone
     -   Never use an image of an equation.
@@ -162,7 +194,7 @@ For authors using the LaTeX scientific document preparation system none of the a
   - Student can convert to MathType - supply standard format
   - Conversion back to Word is not possible in bulk
 
-At the time of writing transforming from (any) PowerPoint is tricky. Best not to use this as a source format. If making slides, I would use Quarto (this!).
+At the time of writing transforming from (any) PowerPoint is tricky. Best not to use this as a source format. If making slides, I would use Quarto (used to make this!).
 
 ## HTML (WCAG 2.2 AA) + MathJax!
 
@@ -171,24 +203,30 @@ At the time of writing transforming from (any) PowerPoint is tricky. Best not to
 -   Check it is MathJax... Right click! $$x = \frac{-b\pm\sqrt{b^2 - 4ac}}{2a}$$
 
     -   Provides/enables: navigation, chunking, zoom, copy/paste, colour, size and layout changes...
-    -   Structural integrity enables assistive technology including text-to-speech, screenreaders, electronic Braille
+    -   Encoded structure enables assistive technology including text-to-speech, screenreaders, electronic Braille
     -   Fallback for ARIA-aware AT without native support
     -   AT providers without native support and not ARIA aware are a problem but not your problem.
 
-We recommend using MathJax 2.7.9 or MathJax 4.* as MathJax 3.x does not enable reflow on zoom. 
+We recommend using MathJax 2.7.9 or [MathJax 4.* as MathJax 3.* does not enable reflow on zoom](https://docs.mathjax.org/en/v4.0/output/linebreaks.html) (a requirement for WCAG 2.2 AA). 
 
-## Scientific document preparation systems
+## Scientific document preparation systems {.allowframebreaks}
 
--   Attempt to transform the LaTeX to HTML with MathJax using [Chirun](https://chirun.org.uk/), [BookML](https://vlmantova.github.io/bookml/) or [lwarp](https://ctan.org/pkg/lwarp?lang=en)
+-   Attempt to transform the LaTeX[^6] to HTML with MathJax using [Chirun](https://chirun.org.uk/), [BookML](https://vlmantova.github.io/bookml/) or [lwarp](https://ctan.org/pkg/lwarp?lang=en)
     -   What happens depends on what you are doing in LaTeX
     -   Keep your preamble **clean**, start with a minimal document, add in sections recompiling to all required output formats after each addition
     -   Some documents cannot be converted
-    -   **No known Beamer solution** at time of writing
+    -   **I don't know of a Beamer solution** at time of writing
 -   Work in a Markdown format, using LaTeX for equations, with HTML has the primary output (can also output LaTeX/PDF); can create slides and single-source slides and documents (like Beamer)
     - [Quarto](https://quarto.org/) is recommended in most cases
       - [Bookdown](https://bookdown.org/) continues to be fine but start new projects in Quarto
     - [RMarkdown](https://rmarkdown.rstudio.com/) can be a helpful starting point for those completely new
     - [Clavertondown](https://bathmash.github.io/clavertondown/), built using RMarkdown and Bookdown; only if other methods can't meet needs
+
+::: {.content-visible when-format="beamer"}
+```{=latex}
+\quad
+```
+:::
   
 ## Non-text elements
 
@@ -232,6 +270,8 @@ Here is some text which is only included in the notes formats!
 
 [^3]: Adhering as closely as possible to RNIB clear print guidelines
 
-[^4]: Work is ongoing to create a version of LaTeX, extra encoding within an adapted PDF **and** software which works with the extra encoding. In the meantime we need to either convert the LaTeX to other formats or switch to a different scientific document preparation system. It is **not possible** to convert LaTeX to html in the general case. It is easy to 'fall out' of the convertible subset without realising or knowing why, the addition of a package, change of preamble order, use of a seemingly innocent command...
+[^4]: Work is ongoing to add encoding within a new PDF standard (PDF/UA-2 and WTPDF (Well-Tagged PDF) standards), [create a version of LaTeX which can do this](https://latex3.github.io/tagging-project/) (itself, a multi-year project [currently in stage 4 of enabling package authors to apply changes](https://latex3.github.io/tagging-project/documentation/)), **and** software which works with the extra encoding. The assistive technology vendors would then also need to support all of this. In the meantime we need to either convert the LaTeX to other formats or switch to a different scientific document preparation system. 
 
 [^5]: Last year we had to assist an author to create a printable PDF for a disabled student after the author had made a whole (and completely technically accessible) course using ProTeXt - but couldn't get PDF working and the HTML produced poor print output...
+
+[^6]: It is **not possible** to convert LaTeX to html in the general case. It is easy to 'fall out' of the convertible subset without realising or knowing why, the addition of a package, change of preamble order, use of a seemingly innocent command...
